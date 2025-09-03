@@ -8,7 +8,8 @@
 #pragma once
 
 // default screen resolution
-#define SCRWIDTH	1280
+//#define SCRWIDTH	744
+#define SCRWIDTH	1488
 #define SCRHEIGHT	720
 // #define FULLSCREEN
 

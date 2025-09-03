@@ -23,6 +23,9 @@
     <ClCompile Include="template\scene.cpp">
       <Filter>template</Filter>
     </ClCompile>
+    <ClCompile Include="template\Game\GameObject.cpp" />
+    <ClCompile Include="template\Game\Level.cpp" />
+    <ClCompile Include="template\Game\player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
@@ -53,6 +56,10 @@
     <ClInclude Include="template\scene.h">
       <Filter>template</Filter>
     </ClInclude>
+    <ClInclude Include="template\Game\GameObject.h" />
+    <ClInclude Include="template\vector2.h" />
+    <ClInclude Include="template\Game\Level.h" />
+    <ClInclude Include="template\Game\player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
@@ -72,5 +79,8 @@
     <Filter Include="kernels">
       <UniqueIdentifier>{96ad1716-f468-46c6-8f16-5accbc19d76c}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\Kynooi\Downloads\NES - Bomberman - Backgrounds - Playfield.png" />
   </ItemGroup>
 </Project>
