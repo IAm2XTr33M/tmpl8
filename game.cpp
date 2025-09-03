@@ -39,24 +39,24 @@ void Game::Init()
 			char ch = map[r][c];
 			Vector2f pos = { c * tilesize , r * tilesize + offset };
 			switch (ch) {
-				case '#': level.AddGameObject(new GameObject("bomber assets/Wall.png",pos)); break;
-				case '.': level.AddGameObject(new GameObject("bomber assets/Enemy.png", pos)); break;
-				case 'S': level.AddGameObject(new GameObject("bomber assets/Safe.png",pos)); break;
+				//case '#': level.AddGameObject(new GameObject("bomber assets/Wall.png",pos)); break;
+				//case '.': level.AddGameObject(new GameObject("bomber assets/Enemy.png", pos)); break;
+				//case 'S': level.AddGameObject(new GameObject("bomber assets/Safe.png",pos)); break;
 			}
 		}
 	}
 	level.AddGameObject(new Player({ tilesize, tilesize + offset }));
 
-	level.Init(screen);
+	level.Init(screenL);
 }
 
 void Game::Tick(float deltatime)
 {
 	level.Update(deltatime / 1000);
 
-	screen->Clear(0x000000);
+	screenL->Clear(0x000000);
 
-	background.Draw(screen, 0, 0);
+	background.Draw(screenL, 0, 0);
 
 	level.Render();
 }
