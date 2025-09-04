@@ -22,10 +22,12 @@ void Level::AddGameObject(GameObject* obj)
 	}
 }
 
-void Level::Init(Surface* surface)
+void Level::Init(Surface* surfaceL, Surface* surfaceR)
 {
 	for (int i = 0; i < count; i++) {
-		gameObjects[i]->surface = surface;
+		gameObjects[i]->surfaceL = surfaceL;
+		gameObjects[i]->surfaceR = surfaceR;
+		gameObjects[i]->level = this;
 		gameObjects[i]->Init();
 	}
 }

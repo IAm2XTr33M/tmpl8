@@ -3,6 +3,8 @@
 #include "sprite.h"
 #include "iostream"
 
+class Level;
+
 class GameObject {
 public:
 	GameObject() = default;
@@ -26,8 +28,11 @@ public:
 	Vector2 tilePosition = Vector2(0, 0);
 	Vector2f position = Vector2f(0, 0);
 	
-	Surface* surface = nullptr;
+	Surface* surfaceL = nullptr;
+	Surface* surfaceR = nullptr;
 	Sprite* sprite = nullptr;
+
+	Level* level;
 	
 	float deltatime;
 }; 

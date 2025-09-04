@@ -6,7 +6,8 @@ class Player : public GameObject
 {
 public:
     Player() = default;
-    Player(Vector2f pos){
+    Player(Vector2f pos, int _player){
+        player = _player;
         position = pos;
     }
     ~Player();
@@ -14,6 +15,7 @@ public:
     void Init() override;
     void Update() override;
 
+    int player = 0;
     float speed = 100.f;
 
 private:

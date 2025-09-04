@@ -137,10 +137,9 @@ int main()
 #endif
 	// initialize application
 	InitRenderTarget(SCRWIDTH, SCRHEIGHT);
-	Surface* screenL = new Surface(SCRWIDTH, SCRHEIGHT);
-	Surface* screenR = new Surface(SCRWIDTH, SCRHEIGHT);
+	Surface* screen = new Surface(SCRWIDTH, SCRHEIGHT);
 	app = new Game();
-	app->screenL = screenL;
+	app->screen = screen;
 	app->Init();
 	// done, enter main loop
 #if 0
@@ -340,7 +339,7 @@ int main()
 		// send the rendering result to the screen using OpenGL
 		if (frameNr++ > 1)
 		{
-			if (app->screenL) renderTarget->CopyFrom(app->screenL);
+			if (app->screen) renderTarget->CopyFrom(app->screen);
 			shader->Bind();
 			shader->SetInputTexture(0, "c", renderTarget);
 			DrawQuad();

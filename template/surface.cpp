@@ -161,7 +161,8 @@ void Surface::CopyTo( Surface* d, int x, int y )
 		int srcheight = height;
 		int dstwidth = d->width;
 		int dstheight = d->height;
-		if ((srcwidth + x) > dstwidth) srcwidth = dstwidth - x;
+		if ((srcwidth 
+			+ x) > dstwidth) srcwidth = dstwidth - x;
 		if ((srcheight + y) > dstheight) srcheight = dstheight - y;
 		if (x < 0) src -= x, srcwidth += x, x = 0;
 		if (y < 0) src -= y * width, srcheight += y, y = 0;
