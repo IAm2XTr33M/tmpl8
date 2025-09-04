@@ -6,8 +6,7 @@ class Player : public GameObject
 {
 public:
     Player() = default;
-    Player(Vector2f pos, int _player){
-        player = _player;
+    Player(Vector2f pos){
         position = pos;
     }
     ~Player();

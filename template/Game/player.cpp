@@ -1,4 +1,4 @@
-#include "precomp.h"
+﻿#include "precomp.h"
 #include "player.h"
 #include "iostream"
 #include "level.h"
@@ -20,28 +20,28 @@ void Player::Update()
 
 	//Up
 	if (GetAsyncKeyState(87) & 0x8000 && player == 1 ||
-		GetAsyncKeyState(38) & 0x8000 && player == 2)
+		GetAsyncKeyState(73) & 0x8000 && player == 2)
 	{ 
 		movement.y -= speed;
 	}
 
 	//Down
 	if (GetAsyncKeyState(83) & 0x8000 && player == 1 ||
-		GetAsyncKeyState(40) & 0x8000 && player == 2)
+		GetAsyncKeyState(75) & 0x8000 && player == 2)
 	{ 
 		movement.y += speed;
 	}
 
 	//Left
 	if (GetAsyncKeyState(65) & 0x8000 && player == 1 ||
-		GetAsyncKeyState(37) & 0x8000 && player == 2)
+		GetAsyncKeyState(74) & 0x8000 && player == 2)
 	{ 
 		movement.x -= speed;
 	}
 
 	//Right
 	if (GetAsyncKeyState(68) & 0x8000 && player == 1 ||
-		GetAsyncKeyState(39) & 0x8000 && player == 2)
+		GetAsyncKeyState(76) & 0x8000 && player == 2)
 	{ 
 		movement.x += speed;
 	}
@@ -49,33 +49,27 @@ void Player::Update()
 
 	position += movement * deltatime;
 
-	int tileSize = 48;
+	//int tileSize = 48;
+
+	//if (!level->lockCam)
+	//{
+	//	if (player == 1)
+	//	{
+	//		if (position.x > SCRWIDTH / 4)
+	//			level->cam1offset = position.x - SCRWIDTH / 4;
+	//		else
+	//			level->cam1offset = 0;
+	//	}
+	//	else if (player == 2)
+	//	{
+	//		if (position.x + tileSize < MAPWIDTH - SCRWIDTH / 4)
+	//			level->cam2offset = position.x + tileSize - SCRWIDTH / 4;
+	//		else
+	//			level->cam2offset = MAPWIDTH - SCRWIDTH / 2;
+	//	}
+	//}
 
 
-	if (player == 1) {
-		if (position.x > SCRWIDTH / 4) {
-			level->cam1offset = position.x - SCRWIDTH / 4;
-		}
-		else {
-			level->cam1offset = 0;
-		}
-	}
-	else {
-		if (position.x + tileSize < MAPWIDTH - SCRWIDTH / 4) {
-
-			if (level->cam2offset - level->cam1offset > SCRWIDTH / 2 ||
-				level->cam2offset - level->cam1offset < 200) {
-				level->cam2offset = position.x + tileSize - SCRWIDTH / 4;
-			}
-		}
-		else {
-			level->cam2offset = MAPWIDTH - SCRWIDTH / 2;
-		}
-	}
-
-	if (level->cam2offset - level->cam1offset <= SCRWIDTH / 2) {
-		std::cout << "Merge screen" << std::endl;
-	}
 	//std::cout << level->cam2offset - level->cam1offset << std::endl;
 
 }

@@ -11,7 +11,10 @@ void GameObject::Render()
 {
 	if (sprite != nullptr) {
 		//Change pos based on offset camera
-		sprite->Draw(surfaceL, position.x - level->cam1offset, position.y);
-		sprite->Draw(surfaceR, position.x - level->cam2offset, position.y);
+		float cam1 = level->cam1offset;
+		float cam2 = level->cam2offset;
+
+		sprite->Draw(surfaceL, position.x - cam1, position.y);
+		sprite->Draw(surfaceR, position.x - cam2, position.y);
 	}
 }
